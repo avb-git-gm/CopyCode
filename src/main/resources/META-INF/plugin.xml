@@ -1,0 +1,36 @@
+<idea-plugin>
+    <!-- Unique identifier for the plugin -->
+    <id>com.giabrend.copycode</id>
+
+    <!-- Public name of the plugin -->
+    <name>Copy All Code</name>
+
+    <!-- Vendor information -->
+    <vendor email="avb@giabrend.com" url="https://github.com/avb-git-gm">Giabrend LLC</vendor>
+
+    <!-- Short description for the plugin -->
+    <description><![CDATA[
+        A lightweight IntelliJ IDEA plugin that allows you to copy all the content of the current editor with a single click,
+        from the context menu, or via a toolbar button.
+    ]]></description>
+
+    <!-- Plugin compatibility -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+        <!-- Registers the "Copy All Code" action -->
+        <action id="com.giabrend.copycode.CopyAllCodeAction"
+                class="com.giabrend.copycode.CopyAllCodeAction"
+                text="Copy All Code"
+                description="Copy all content of the current editor to clipboard"
+                icon="/icons/pluginIcon.svg">
+            <!-- Context menu -->
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <!-- Add to Run Toolbar Actions -->
+            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
